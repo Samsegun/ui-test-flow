@@ -1,5 +1,5 @@
 type GreetProps = {
-    name?: string;
+    readonly name?: string;
 };
 
 const Greet = ({ name }: GreetProps) => {

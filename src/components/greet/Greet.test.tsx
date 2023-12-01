@@ -1,13 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import Greet from "./Greet";
 
-describe("greet component renders correctly", () => {
-    it("hello is on page", () => {
+describe("greet component renders", () => {
+    test("hello on page", () => {
         render(<Greet />);
         expect(screen.getByText("hello")).toBeInTheDocument();
     });
-    it("hello renders with a name", () => {
+    test("hello with a name", () => {
         render(<Greet name='tommy' />);
-        expect(screen.getByText("hello tommy")).toBeInTheDocument();
+        const targetElement = screen.getByText("hello tommy");
+        expect(targetElement).toBeInTheDocument();
     });
 });
